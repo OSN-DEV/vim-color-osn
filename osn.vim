@@ -25,9 +25,7 @@ endfunction
 "# color definition
 let s:pl = {}
 let s:pl.none = "NONE"
-" let s:pl.bg01 = {"gui": "#2E2F35","cui": "1"}
-" let s:pl.fg01 = {"gui": "#4b545e","cui": "1"}
-" let s:pl.fg02 = {"gui": "#c3c3c3","cui": "1"}
+" let s:pl.fg01 = {"gui": "#","cui": "1"}
 " let s:pl.fg03 = {"gui": "#4b545e","cui": "1"}
 " let s:pl.fg04 = {"gui": "#38b48b","cui": "1"}
 " let s:pl.fg05 = {"gui": "#8D7856","cui": "1"}
@@ -39,33 +37,34 @@ let s:pl.fg03 = {"gui": "#9B9257","cui": "1"}
 let s:pl.fg04 = {"gui": "#63768A","cui": "1"}
 let s:pl.fg05 = {"gui": "#738C9C","cui": "1"}
 let s:pl.fg06 = {"gui": "#6998B3","cui": "1"}
-let s:pl.fg07 = {"gui": "#9A9A9A","cui": "1"}
+let s:pl.fg07 = {"gui": "#aaaaaa","cui": "1"}
 let s:pl.fg08 = {"gui": "#868B8D","cui": "1"}
 
-let s:pl.bg00 = {"gui": "#3E4B59","cui": "1"}
+let s:pl.bg00 = {"gui": "#2E2F35","cui": "1"}
 let s:pl.bg01 = {"gui": "#151A1E","cui": "1"}
 let s:pl.bg02 = {"gui": "#14191F","cui": "1"}
 let s:pl.bg03 = {"gui": "#2D3640","cui": "1"}
 
-
-
-let s:pl.fgomment = {"gui": "#5A5A5A","cui": "1"}
-let s:pl.error = {"gui": "#810002","cui": "1"}
+let s:pl.fgomment  = {"gui": "#5A5A5A","cui": "1"}
+let s:pl.error     = {"gui": "#810002","cui": "1"}
 let s:pl.selection = {"gui": "#253340","cui": "1"}
-let s:pl.diffg = {"gui": "#012800","cui": "1"}
-let s:pl.diffr = {"gui": "#340001","cui": "1"}
-let s:pl.fgdiffg = {"gui": "#037500","cui": "1"}
-let s:pl.fgdiffy = {"gui": "#817E00","cui": "1"}
-let s:pl.fgdiffr = {"gui": "#810002","cui": "1"}
-
+let s:pl.diffg     = {"gui": "#012800","cui": "1"}
+let s:pl.diffr     = {"gui": "#340001","cui": "1"}
+let s:pl.fgdiffg   = {"gui": "#037500","cui": "1"}
+let s:pl.fgdiffy   = {"gui": "#817E00","cui": "1"}
+let s:pl.fgdiffr   = {"gui": "#810002","cui": "1"}
+let s:pl.red       = {"gui": "#ff0000","cui": "1"}
 
 
 "==================================================
 "# highlight
 "https://vim-jp.org/vimdoc-ja/syntax.html
-call s:setHi("Normal"            ,s:pl.bg00.gui      ,s:pl.fg07.gui           ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
+call s:setHi("Normal"            ,s:pl.bg00.gui      ,s:pl.fg07.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)  "通常のテキスト
+call s:setHi("NonText"           ,s:pl.bg00.gui      ,s:pl.bg03.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)  "通常のテキスト以外
+
+
 call s:setHi("ColorColumn"       ,s:pl.none          ,s:pl.bg01.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none) "colocoumnを設定した列の情報
-call s:setHi("Comment"           ,s:pl.fgomment.gui  ,s:pl.fgomment.gui ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none) "
+call s:setHi("Comment"           ,s:pl.none          ,s:pl.fgomment.gui ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none) "
 call s:setHi("Conceal"           ,s:pl.none          ,s:pl.fgomment.gui ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none) 
 call s:setHi("Constant"          ,s:pl.none          ,s:pl.fg03.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
 call s:setHi("CursorColumn"      ,s:pl.bg01.gui      ,s:pl.none         ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
@@ -89,7 +88,6 @@ call s:setHi("Keyword"           ,s:pl.none          ,s:pl.fg05.gui     ,s:pl.no
 call s:setHi("LineNr"            ,s:pl.none          ,s:pl.fg03.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
 call s:setHi("MatchParen"        ,s:pl.bg00.gui      ,s:pl.fg07.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
 call s:setHi("ModeMsg"           ,s:pl.none          ,s:pl.fg02.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
-call s:setHi("NonText"           ,s:pl.none          ,s:pl.bg03.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
 call s:setHi("Operator"          ,s:pl.none          ,s:pl.fg07.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
 call s:setHi("Pmenu"             ,s:pl.selection.gui ,s:pl.fg07.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
 call s:setHi("PmenuSel"          ,s:pl.selection.gui ,s:pl.fg07.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
@@ -120,16 +118,3 @@ call s:setHi("WarningMsg"        ,s:pl.none          ,s:pl.error.gui    ,s:pl.no
 call s:setHi("WildMenu"          ,s:pl.bg01.gui      ,s:pl.fg00.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
 call s:setHi("qfLineNr"          ,s:pl.none          ,s:pl.fg01.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
 
-
-
-"## Text
-"call s:setHi("Normal"        ,s:pl.bg01.gui,       s:pl.fg02.gui,   s:pl.none,       s:pl.none,       s:pl.none,       s:pl.none)   "通常
-"call s:setHi("NonText"       ,s:pl.none,           s:pl.fg01.gui,   s:pl.none,       s:pl.none,       s:pl.none,       s:pl.none)   "EOF以降の~など
-
-
-
-"## Others
-"call s:setHi("LineNr"       ,s:pl.none,           s:pl.fg03.gui,   s:pl.none,       s:pl.none,       s:pl.none,       s:pl.none)   "行番号
-"call s:setHi("CursorLineNr" ,s:pl.none,           s:pl.fg04.gui,   s:pl.none,       s:pl.none,       s:pl.none,       s:pl.none)   "カレント行
-"call s:setHi("Statement"    ,s:pl.none,           s:pl.fg05.gui,   s:pl.none,       s:pl.none,       s:pl.none,       s:pl.none)   "HTMLのタグなど
-"call s:setHi("Title"        ,s:pl.none,           s:pl.fg05.gui,   s:pl.none,       s:pl.none,       s:pl.none,       s:pl.none)   "HTMLのH1タグなどで囲まれた値など
