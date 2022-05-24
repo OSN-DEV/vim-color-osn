@@ -33,17 +33,19 @@ let s:pl.none = "NONE"
 let s:pl.fg00 = {"gui": "#111A1F","cui": "1"}
 let s:pl.fg01 = {"gui": "#8D7856","cui": "1"}
 let s:pl.fg02 = {"gui": "#798362","cui": "1"}
-let s:pl.fg03 = {"gui": "#9B9257","cui": "1"}
+let s:pl.fg03 = {"gui": "#5f561b","cui": "1"}
 let s:pl.fg04 = {"gui": "#63768A","cui": "1"}
 let s:pl.fg05 = {"gui": "#738C9C","cui": "1"}
 let s:pl.fg06 = {"gui": "#6998B3","cui": "1"}
 let s:pl.fg07 = {"gui": "#aaaaaa","cui": "1"}
 let s:pl.fg08 = {"gui": "#868B8D","cui": "1"}
+let s:pl.fg09 = {"gui": "#d7ce93","cui": "1"}
 
 let s:pl.bg00 = {"gui": "#2E2F35","cui": "1"}
 let s:pl.bg01 = {"gui": "#151A1E","cui": "1"}
 let s:pl.bg02 = {"gui": "#14191F","cui": "1"}
 let s:pl.bg03 = {"gui": "#2D3640","cui": "1"}
+let s:pl.bg04 = {"gui": "#38393f","cui": "1"}
 
 let s:pl.fgomment  = {"gui": "#5A5A5A","cui": "1"}
 let s:pl.error     = {"gui": "#810002","cui": "1"}
@@ -60,17 +62,19 @@ let s:pl.red       = {"gui": "#ff0000","cui": "1"}
 "# highlight
 "https://vim-jp.org/vimdoc-ja/syntax.html
 call s:setHi("Normal"            ,s:pl.bg00.gui      ,s:pl.fg07.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)  "通常のテキスト
-call s:setHi("NonText"           ,s:pl.bg00.gui      ,s:pl.bg03.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)  "通常のテキスト以外
+call s:setHi("NonText"           ,s:pl.none          ,s:pl.bg03.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)  "通常のテキスト以外
+call s:setHi("LineNr"            ,s:pl.none          ,s:pl.fg03.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
+
+call s:setHi("CursorLineNr"      ,s:pl.bg04.gui      ,s:pl.fg09.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
+call s:setHi("CursorLine"        ,s:pl.bg04.gui      ,s:pl.none         ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
+call s:setHi("CursorColumn"      ,s:pl.bg04.gui      ,s:pl.none         ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
+call s:setHi("CursorLineConceal" ,s:pl.bg04.gui      ,s:pl.fgomment.gui ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
 
 
 call s:setHi("ColorColumn"       ,s:pl.none          ,s:pl.bg01.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none) "colocoumnを設定した列の情報
 call s:setHi("Comment"           ,s:pl.none          ,s:pl.fgomment.gui ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none) "
 call s:setHi("Conceal"           ,s:pl.none          ,s:pl.fgomment.gui ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none) 
 call s:setHi("Constant"          ,s:pl.none          ,s:pl.fg03.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
-call s:setHi("CursorColumn"      ,s:pl.bg01.gui      ,s:pl.none         ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
-call s:setHi("CursorLine"        ,s:pl.bg01.gui      ,s:pl.none         ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
-call s:setHi("CursorLineConceal" ,s:pl.bg01.gui      ,s:pl.fgomment.gui ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
-call s:setHi("CursorLineNr"      ,s:pl.bg01.gui      ,s:pl.fg03.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
 call s:setHi("DiffAdd"           ,s:pl.diffg.gui     ,s:pl.none         ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
 call s:setHi("DiffChange"        ,s:pl.diffg.gui     ,s:pl.none         ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
 call s:setHi("DiffDelete"        ,s:pl.diffr.gui     ,s:pl.diffr.gui    ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
@@ -85,7 +89,6 @@ call s:setHi("Function"          ,s:pl.none          ,s:pl.fg01.gui     ,s:pl.no
 call s:setHi("Identifier"        ,s:pl.none          ,s:pl.fg01.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
 call s:setHi("Ignore"            ,s:pl.none          ,s:pl.none         ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
 call s:setHi("Keyword"           ,s:pl.none          ,s:pl.fg05.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
-call s:setHi("LineNr"            ,s:pl.none          ,s:pl.fg03.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
 call s:setHi("MatchParen"        ,s:pl.bg00.gui      ,s:pl.fg07.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
 call s:setHi("ModeMsg"           ,s:pl.none          ,s:pl.fg02.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
 call s:setHi("Operator"          ,s:pl.none          ,s:pl.fg07.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
