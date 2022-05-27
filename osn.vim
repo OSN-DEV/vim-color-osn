@@ -46,6 +46,7 @@ let s:pl.bg01 = {"gui": "#151A1E","cui": "1"}
 let s:pl.bg02 = {"gui": "#14191F","cui": "1"}
 let s:pl.bg03 = {"gui": "#2D3640","cui": "1"}
 let s:pl.bg04 = {"gui": "#38393f","cui": "1"}
+let s:pl.bg05 = {"gui": "#d7ce93","cui": "1"}
 
 let s:pl.fgomment  = {"gui": "#5A5A5A","cui": "1"}
 let s:pl.error     = {"gui": "#810002","cui": "1"}
@@ -63,40 +64,47 @@ let s:pl.red       = {"gui": "#ff0000","cui": "1"}
 "https://vim-jp.org/vimdoc-ja/syntax.html
 call s:setHi("Normal"            ,s:pl.bg00.gui      ,s:pl.fg07.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)  "通常のテキスト
 call s:setHi("NonText"           ,s:pl.none          ,s:pl.bg03.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)  "通常のテキスト以外
-call s:setHi("LineNr"            ,s:pl.none          ,s:pl.fg03.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
 
-call s:setHi("CursorLineNr"      ,s:pl.bg04.gui      ,s:pl.fg09.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
-call s:setHi("CursorLine"        ,s:pl.bg04.gui      ,s:pl.none         ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
-call s:setHi("CursorColumn"      ,s:pl.bg04.gui      ,s:pl.none         ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
-call s:setHi("CursorLineConceal" ,s:pl.bg04.gui      ,s:pl.fgomment.gui ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
+call s:setHi("LineNr"            ,s:pl.none          ,s:pl.fg03.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)  "行番号
+call s:setHi("CursorLineNr"      ,s:pl.bg04.gui      ,s:pl.fg09.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)  "カレント行の行番号
+
+call s:setHi("CursorLine"        ,s:pl.bg04.gui      ,s:pl.none         ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)  "カレント行
+
+call s:setHi("CursorColumn"      ,s:pl.bg04.gui      ,s:pl.none         ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)  "カレント列
+call s:setHi("ColorColumn"       ,s:pl.none          ,s:pl.none         ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none) "colocoumnを設定した列の情報
+
+call s:setHi("Conceal"           ,s:pl.none          ,s:pl.fgomment.gui ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)  "
+call s:setHi("CursorLineConceal" ,s:pl.bg04.gui      ,s:pl.fgomment.gui ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)  "
+
+call s:setHi("Function"          ,s:pl.none          ,s:pl.fg01.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)  "対となるカッコ等
+call s:setHi("MatchParen"        ,s:pl.none          ,s:pl.fg07.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)  "
+
+call s:setHi("Directory"         ,s:pl.none          ,s:pl.fg00.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)  "NERDTreeのフォルダ等
+
+call s:setHi("Search"            ,s:pl.bg05.gui      ,s:pl.fg00.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)  "検索等
 
 
-call s:setHi("ColorColumn"       ,s:pl.none          ,s:pl.bg01.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none) "colocoumnを設定した列の情報
+
 call s:setHi("Comment"           ,s:pl.none          ,s:pl.fgomment.gui ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none) "
-call s:setHi("Conceal"           ,s:pl.none          ,s:pl.fgomment.gui ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none) 
 call s:setHi("Constant"          ,s:pl.none          ,s:pl.fg03.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
 call s:setHi("DiffAdd"           ,s:pl.diffg.gui     ,s:pl.none         ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
 call s:setHi("DiffChange"        ,s:pl.diffg.gui     ,s:pl.none         ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
 call s:setHi("DiffDelete"        ,s:pl.diffr.gui     ,s:pl.diffr.gui    ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
 call s:setHi("DiffText"          ,s:pl.diffg.gui     ,s:pl.none         ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
-call s:setHi("Directory"         ,s:pl.none          ,s:pl.bg00.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
 call s:setHi("EndOfBuffer"       ,s:pl.none          ,s:pl.fg00.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
 call s:setHi("Error"             ,s:pl.error.gui     ,s:pl.fg07.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
 call s:setHi("ErrorMsg"          ,s:pl.none          ,s:pl.error.gui    ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
 call s:setHi("FoldColumn"        ,s:pl.bg02.gui      ,s:pl.none         ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
 call s:setHi("Folded"            ,s:pl.bg02.gui      ,s:pl.bg00.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
-call s:setHi("Function"          ,s:pl.none          ,s:pl.fg01.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
 call s:setHi("Identifier"        ,s:pl.none          ,s:pl.fg01.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
 call s:setHi("Ignore"            ,s:pl.none          ,s:pl.none         ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
 call s:setHi("Keyword"           ,s:pl.none          ,s:pl.fg05.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
-call s:setHi("MatchParen"        ,s:pl.bg00.gui      ,s:pl.fg07.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
 call s:setHi("ModeMsg"           ,s:pl.none          ,s:pl.fg02.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
 call s:setHi("Operator"          ,s:pl.none          ,s:pl.fg07.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
 call s:setHi("Pmenu"             ,s:pl.selection.gui ,s:pl.fg07.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
 call s:setHi("PmenuSel"          ,s:pl.selection.gui ,s:pl.fg07.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
 call s:setHi("PreProc"           ,s:pl.none          ,s:pl.fg03.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
 call s:setHi("Question"          ,s:pl.none          ,s:pl.fg02.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
-call s:setHi("Search"            ,s:pl.bg03.gui      ,s:pl.fg00.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
 call s:setHi("SignColumn"        ,s:pl.bg00.gui      ,s:pl.none         ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
 call s:setHi("Special"           ,s:pl.none          ,s:pl.fg05.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
 call s:setHi("SpellBad"          ,s:pl.none          ,s:pl.error.gui    ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
