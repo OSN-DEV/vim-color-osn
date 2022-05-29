@@ -63,7 +63,7 @@ let s:pl.red       = {"gui": "#ff0000","cui": "1"}
 "# highlight
 "https://vim-jp.org/vimdoc-ja/syntax.html
 call s:setHi("Normal"            ,s:pl.bg00.gui      ,s:pl.fg07.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)  "通常のテキスト
-call s:setHi("NonText"           ,s:pl.none          ,s:pl.bg03.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)  "通常のテキスト以外
+call s:setHi("NonText"           ,s:pl.none          ,s:pl.fg03.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)  "通常のテキスト以外
 
 call s:setHi("LineNr"            ,s:pl.none          ,s:pl.fg03.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)  "行番号
 call s:setHi("CursorLineNr"      ,s:pl.bg04.gui      ,s:pl.fg09.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)  "カレント行の行番号
