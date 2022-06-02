@@ -30,7 +30,7 @@ let s:pl.none = "NONE"
 " let s:pl.fg04 = {"gui": "#38b48b","cui": "1"}
 " let s:pl.fg05 = {"gui": "#8D7856","cui": "1"}
 
-let s:pl.fg00 = {"gui": "#111A1F","cui": "1"}
+let s:pl.fg00 = {"gui": "#080808","cui": "1"}
 let s:pl.fg01 = {"gui": "#8D7856","cui": "1"}
 let s:pl.fg02 = {"gui": "#798362","cui": "1"}
 let s:pl.fg03 = {"gui": "#5f561b","cui": "1"}
@@ -79,7 +79,7 @@ call s:setHi("CursorLineConceal" ,s:pl.bg04.gui      ,s:pl.fgomment.gui ,s:pl.no
 call s:setHi("Function"          ,s:pl.none          ,s:pl.fg01.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)  "対となるカッコ等
 call s:setHi("MatchParen"        ,s:pl.none          ,s:pl.fg07.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)  "
 
-call s:setHi("Directory"         ,s:pl.none          ,s:pl.fg00.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)  "NERDTreeのフォルダ等
+call s:setHi("Directory"         ,s:pl.none          ,s:pl.fg07.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)  "NERDTreeのフォルダ等
 
 call s:setHi("Search"            ,s:pl.bg05.gui      ,s:pl.fg00.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)  "検索等
 
