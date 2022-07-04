@@ -37,7 +37,7 @@ let s:pl.fg03 = {"gui": "#696025","cui": "1"}
 let s:pl.fg04 = {"gui": "#63768A","cui": "1"}
 let s:pl.fg05 = {"gui": "#738C9C","cui": "1"}
 let s:pl.fg06 = {"gui": "#6998B3","cui": "1"}
-let s:pl.fg07 = {"gui": "#aaaaaa","cui": "1"}
+let s:pl.fg07 = {"gui": "#eeffff","cui": "1"}
 let s:pl.fg08 = {"gui": "#868B8D","cui": "1"}
 let s:pl.fg09 = {"gui": "#d7ce93","cui": "1"}
 
