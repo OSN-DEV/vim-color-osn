@@ -41,14 +41,14 @@ let s:pl.fg07 = {"gui": "#eeffff","cui": "1"}
 let s:pl.fg08 = {"gui": "#868B8D","cui": "1"}
 let s:pl.fg09 = {"gui": "#d7ce93","cui": "1"}
 
-let s:pl.bg00 = {"gui": "#1e1e1e","cui": "1"}
+let s:pl.bg00 = {"gui": "#1a1a1a","cui": "1"}
 let s:pl.bg01 = {"gui": "#151A1E","cui": "1"}
 let s:pl.bg02 = {"gui": "#14191F","cui": "1"}
 let s:pl.bg03 = {"gui": "#2D3640","cui": "1"}
 let s:pl.bg04 = {"gui": "#454545","cui": "1"}
 let s:pl.bg05 = {"gui": "#d7ce93","cui": "1"}
 
-let s:pl.fgomment  = {"gui": "#5A5A5A","cui": "1"}
+let s:pl.fgomment  = {"gui": "#6A9955","cui": "1"}
 let s:pl.error     = {"gui": "#764153","cui": "1"}
 let s:pl.selection = {"gui": "#2c445b","cui": "1"}
 let s:pl.diffg     = {"gui": "#012800","cui": "1"}
