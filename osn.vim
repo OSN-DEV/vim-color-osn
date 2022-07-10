@@ -41,7 +41,7 @@ let s:pl.fg07 = {"gui": "#eeffff","cui": "1"}
 let s:pl.fg08 = {"gui": "#868B8D","cui": "1"}
 let s:pl.fg09 = {"gui": "#d7ce93","cui": "1"}
 
-let s:pl.bg00 = {"gui": "#1a1a1a","cui": "1"}
+let s:pl.bg00 = {"gui": "#2E2F35","cui": "1"}
 let s:pl.bg01 = {"gui": "#151A1E","cui": "1"}
 let s:pl.bg02 = {"gui": "#14191F","cui": "1"}
 let s:pl.bg03 = {"gui": "#2D3640","cui": "1"}
@@ -84,6 +84,14 @@ call s:setHi("Directory"         ,s:pl.none          ,s:pl.fg07.gui     ,s:pl.no
 call s:setHi("Search"            ,s:pl.bg05.gui      ,s:pl.fg00.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)  "検索等
 
 
+call s:setHi("htmlArg"           ,s:pl.none          ,"#9CDCFE"           ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)  "検索等
+call s:setHi("htmlTag"           ,s:pl.none          ,"#808080"           ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)  "検索等
+call s:setHi("htmlTagN"           ,s:pl.none         ,"#9CDCFE"           ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)  "検索等
+call s:setHi("htmlTitle"         ,s:pl.none          ,"#eeffff"           ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)  "検索等
+call s:setHi("htmlTagName"       ,s:pl.none          ,"#569CD6"           ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)  "検索等
+call s:setHi("htmlString"        ,s:pl.none          ,"#CD8D8D"           ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)  "検索等
+
+
 
 call s:setHi("Comment"           ,s:pl.none          ,s:pl.fgomment.gui ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none) "
 call s:setHi("Constant"          ,s:pl.none          ,s:pl.fg03.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
@@ -102,7 +110,7 @@ call s:setHi("Keyword"           ,s:pl.none          ,s:pl.fg05.gui     ,s:pl.no
 call s:setHi("ModeMsg"           ,s:pl.none          ,s:pl.fg02.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
 call s:setHi("Operator"          ,s:pl.none          ,s:pl.fg07.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
 call s:setHi("Pmenu"             ,s:pl.selection.gui ,s:pl.fg07.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
-call s:setHi("PmenuSel"          ,s:pl.selection.gui ,s:pl.fg07.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
+call s:setHi("PmenuSel"          ,s:pl.bg05.gui ,s:pl.fg07.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
 call s:setHi("PreProc"           ,s:pl.none          ,s:pl.fg03.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
 call s:setHi("Question"          ,s:pl.none          ,s:pl.fg02.gui     ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
 call s:setHi("SignColumn"        ,s:pl.bg00.gui      ,s:pl.none         ,s:pl.none ,s:pl.none ,s:pl.none ,s:pl.none)
